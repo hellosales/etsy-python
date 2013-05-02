@@ -305,7 +305,8 @@ class API(object):
   
 
     def _get(self, http_method, url, **kwargs):
-        kwargs.update(dict(api_key=self.api_key))
+        if self.etsy_oauth_client is None:
+            kwargs.update(dict(api_key=self.api_key))
 
         if http_method == 'GET':
             url = '%s%s?%s' % (self.api_url, url, urlencode(kwargs))
