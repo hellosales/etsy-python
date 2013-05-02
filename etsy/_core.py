@@ -309,7 +309,7 @@ class API(object):
 
         if http_method == 'GET':
             url = '%s%s?%s' % (self.api_url, url, urlencode(kwargs))
-            body = None
+            body = ''
             content_type = None
         elif http_method == 'POST':
             url = '%s%s' % (self.api_url, url)
