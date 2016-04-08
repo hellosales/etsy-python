@@ -142,9 +142,9 @@ class APIMethod(object):
             del kwargs[p]
 
         self.type_checker(self.spec, **kwargs)
-        print(self.spec)
-        print(self.uri_format)
-        print(kwargs)
+        # print(self.spec)
+        # print(self.uri_format)
+        # print(kwargs)
         return self.api._get(self.spec['http_method'], self.uri_format % ps, **kwargs)
 
 
